@@ -19,7 +19,7 @@ class QRadioButtonDemo(QWidget):
         self.button1 = QRadioButton('单选按钮1')
         self.button1.setChecked(True)
 
-        self.button1.toggled.connect(self.buttonState)
+        self.button1.toggled.connect(self.buttonState)   # toggled状态切换的信号，注意不是clicked
         layout.addWidget(self.button1)
 
         self.button2 = QRadioButton('单选按钮2')

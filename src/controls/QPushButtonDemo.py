@@ -48,8 +48,8 @@ class QPushButtonDemo(QDialog) :
         self.button3.setEnabled(False)
         layout.addWidget(self.button3)
 
-        self.button4 = QPushButton('&MyButton')
-        self.button4.setDefault(True)
+        self.button4 = QPushButton('&MyButton')  # 热键 alt+M
+        self.button4.setDefault(True)   # 设置为默认按钮，直接按回车就会触发这个按钮   默认按钮一个窗口只能有一个
         self.button4.clicked.connect(lambda:self.whichButton(self.button4))
         layout.addWidget(self.button4)
 
