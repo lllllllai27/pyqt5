@@ -62,14 +62,14 @@ class QMessageBoxDemo(QWidget):
         if text == '显示关于对话框':
             QMessageBox.about(self,'关于','这是一个关于对话框')
         elif text == '显示消息对话框':
-            reply = QMessageBox.information(self,'消息','这是一个消息对话框', QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)
+            reply = QMessageBox.information(self,'消息','这是一个消息对话框', QMessageBox.No | QMessageBox.Yes, QMessageBox.Yes)
             print(reply == QMessageBox.Yes)
         elif text == '显示警告对话框':
             QMessageBox.warning(self,'警告','这是一个警告对话框',QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)
         elif text == '显示错误对话框':
             QMessageBox.critical(self,'警告','这是一个警告对话框',QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)
         elif text == '显示提问对话框':
-            QMessageBox.question(self,'警告','这是一个警告对话框',QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)
+            QMessageBox.question(self,'警告','这是一个警告对话框',QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)  # 提问对话框常见的是提示是否保存文件之类的
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

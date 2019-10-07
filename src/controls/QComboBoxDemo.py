@@ -31,7 +31,7 @@ class QComboBoxDemo(QWidget):
         self.cb.addItem('Python')
         self.cb.addItems(['Java','C#','Ruby'])
 
-        self.cb.currentIndexChanged.connect(self.selectionChange)
+        self.cb.currentIndexChanged.connect(self.selectionChange)  # 下拉列表控件的信号是currentIndexChanged，默认会将控件对象的本身和项目的index传递给槽函数
 
         layout.addWidget(self.label)
         layout.addWidget(self.cb)
@@ -39,6 +39,11 @@ class QComboBoxDemo(QWidget):
         self.setLayout(layout)
 
     def selectionChange(self,i):
+        """
+        下拉列表信号对应的槽函数
+        :param i: 默认传递过来的，是下拉列表各个项目的索引值
+        :return:
+        """
         self.label.setText(self.cb.currentText())
         self.label.adjustSize()
 

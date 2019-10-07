@@ -34,13 +34,14 @@ class QCheckBoxDemo(QWidget):
         layout.addWidget(self.checkBox1)
 
         self.checkBox2 = QCheckBox('复选框控件2')
-        self.checkBox2.stateChanged.connect(lambda:self.checkboxState(self.checkBox2))
+        self.checkBox2.stateChanged.connect(lambda:self.checkboxState(self.checkBox2))  # 复选框的信号是stateChanged
         layout.addWidget(self.checkBox2)
 
         self.checkBox3 = QCheckBox('半选中')
         self.checkBox3.stateChanged.connect(lambda:self.checkboxState(self.checkBox3))
+        # 设置这两个才能设置成半选中的状态
         self.checkBox3.setTristate(True)
-        self.checkBox3.setCheckState(Qt.PartiallyChecked)
+        self.checkBox3.setCheckState(Qt.PartiallyChecked)  # 这里是用setCheckState方法而不是setChecked方法，setChecked方法只能设置选中或未选中，不能设置半选中
         layout.addWidget(self.checkBox3)
 
         self.setLayout(layout)

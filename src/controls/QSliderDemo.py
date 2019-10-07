@@ -9,14 +9,15 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
+
 class QSliderDemo(QWidget):
     def __init__(self):
-        super(QSliderDemo,self).__init__()
+        super(QSliderDemo, self).__init__()
         self.initUI()
 
     def initUI(self):
         self.setWindowTitle('滑块控件演示')
-        self.resize(300,700)
+        self.resize(300, 700)
 
         layout = QVBoxLayout()
         self.label = QLabel('你好 PyQt5')
@@ -25,8 +26,6 @@ class QSliderDemo(QWidget):
         layout.addWidget(self.label)
 
         self.slider = QSlider(Qt.Horizontal)
-
-
 
         # 设置最小值
         self.slider.setMinimum(12)
@@ -46,7 +45,7 @@ class QSliderDemo(QWidget):
 
         layout.addWidget(self.slider)
         self.slider.valueChanged.connect(self.valueChange)
-
+# ============================================================================
         self.slider1 = QSlider(Qt.Vertical)
         layout.addWidget(self.slider1)
         # 设置最小值
@@ -68,9 +67,11 @@ class QSliderDemo(QWidget):
         self.setLayout(layout)
 
     def valueChange(self):
-        print('当前值：%s' % self.sender().value())
+        print('当前值：%s' % self.sender().value())   # 如果有多个控件的信号对应一个槽函数，这里要使用sender()，而不是某一个控件对象
         size = self.sender().value()
-        self.label.setFont(QFont('Arial',size))
+        self.label.setFont(QFont('Arial', size))   # 设置字体大小
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = QSliderDemo()
