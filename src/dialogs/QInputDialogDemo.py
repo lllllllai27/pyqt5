@@ -4,7 +4,7 @@
 
 QInputDialog.getItem
 QInputDialog.getText
-QInputDialog.getInt
+QInputDialog.getInt   显示计数器控件
 
 '''
 
@@ -12,9 +12,11 @@ import sys
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+
+
 class QInputDialogDemo(QWidget):
     def __init__(self):
-        super(QInputDialogDemo,self).__init__()
+        super(QInputDialogDemo, self).__init__()
         self.initUI()
 
     def initUI(self):
@@ -39,18 +41,21 @@ class QInputDialogDemo(QWidget):
         self.setLayout(layout)
 
     def getItem(self):
-        items = ('C','C++','Ruby','Python','Java')
-        item, ok =QInputDialog.getItem(self,'请选择编程语言','语言列表',items)
+        items = ('C', 'C++', 'Ruby', 'Python', 'Java')
+        item, ok = QInputDialog.getItem(self, '请选择编程语言', '语言列表', items)
         if ok and item:
             self.lineEdit1.setText(item)
+
     def getText(self):
-        text, ok =QInputDialog.getText(self,'文本输入框','输入姓名')
+        text, ok = QInputDialog.getText(self, '文本输入框', '输入姓名')
         if ok and text:
             self.lineEdit2.setText(text)
+
     def getInt(self):
-        num, ok =QInputDialog.getInt(self,'整数输入框','输入数字')
+        num, ok = QInputDialog.getInt(self, '整数输入框', '输入数字')
         if ok and num:
             self.lineEdit3.setText(str(num))
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

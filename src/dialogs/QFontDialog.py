@@ -28,6 +28,7 @@ class QFontDialogDemo(QWidget):
         self.setLayout(layout)
     def getFont(self):
         font, ok = QFontDialog.getFont()
+        print(font, ok)
         if ok :
             self.fontLabel.setFont(font)
 

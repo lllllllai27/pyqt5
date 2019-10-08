@@ -38,7 +38,7 @@ class QColorDialogDemo(QWidget):
         self.setLayout(layout)
     def getColor(self):
         color = QColorDialog.getColor()
-        p = QPalette()
+        p = QPalette()   # 调色板
         p.setColor(QPalette.WindowText,color)
         self.colorLabel.setPalette(p)
     def getBGColor(self):
