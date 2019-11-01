@@ -18,17 +18,16 @@ class DateTimeEdit(QWidget):
         vlayout = QVBoxLayout()
         dateTimeEdit1 = QDateTimeEdit()
         dateTimeEdit2 = QDateTimeEdit(QDateTime.currentDateTime())
-        dateTimeEdit1.setMinimumDate(QDate.currentDate().addDays(-365))
-        dateTimeEdit1.setMaximumDate(QDate.currentDate().addDays(365))
+        dateTimeEdit1.setMinimumDate(QDate.currentDate().addDays(-365))  # 当前时间减一年（365天）
+        dateTimeEdit1.setMaximumDate(QDate.currentDate().addDays(365))   # 当前时间加一年（365天）
         self.dateTimeEdit = dateTimeEdit1
-        dateTimeEdit2.setCalendarPopup(True)
+        dateTimeEdit2.setCalendarPopup(True)  # 日历会弹出
 
-        dateEdit = QDateTimeEdit(QDate.currentDate())
-        timeEdit = QDateTimeEdit(QTime.currentTime())
+        dateEdit = QDateTimeEdit(QDate.currentDate())  # 当前日期
+        timeEdit = QDateTimeEdit(QTime.currentTime())  # 当前时间
 
-        dateTimeEdit1.setDisplayFormat("yyyy-MM-dd  HH:mm:ss")
+        dateTimeEdit1.setDisplayFormat("yyyy-MM-dd HH:mm:ss")
         dateTimeEdit2.setDisplayFormat("yyyy/MM/dd HH-mm-ss")
-
         dateEdit.setDisplayFormat("yyyy.MM.dd")
         timeEdit.setDisplayFormat("HH:mm:ss")
 
@@ -51,14 +50,17 @@ class DateTimeEdit(QWidget):
 
     # 日期变化
     def onDateChanged(self,date):
+        print(1)
         print(date)
 
     # 时间变化
     def onTimeChanged(self,time):
+        print(2)
         print(time)
 
     # 日期和时间变化
     def onDateTimeChanged(self,datetime):
+        print(3)
         print(datetime)
 
     def onButtonClick(self):

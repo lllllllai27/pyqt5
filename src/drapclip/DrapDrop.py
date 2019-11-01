@@ -17,6 +17,9 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
 class MyComboBox(QComboBox) :
+    """
+    下拉列表
+    """
     def __init__(self):
         super(MyComboBox,self).__init__()
         self.setAcceptDrops(True)
@@ -28,6 +31,7 @@ class MyComboBox(QComboBox) :
             e.ignore()
     def dropEvent(self,e):
         self.addItem(e.mimeData().text())
+        print('已添加到下拉列表中')
 
 class DrapDropDemo(QWidget):
     def __init__(self):

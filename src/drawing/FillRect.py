@@ -15,9 +15,9 @@ class FillRect(QWidget):
         self.resize(600,600)
         self.setWindowTitle('用画刷填充区域')
 
-    def paintEvent(self,e):
-        qp = QPainter()
-        qp.begin(self)
+    def paintEvent(self,e):   # 必须要重写paintEvent这个方法，默认附带了一个事件对象参数e
+        qp = QPainter()  # 必须要
+        qp.begin(self)   # 必须要
         brush = QBrush(Qt.SolidPattern)
         qp.setBrush(brush)
         qp.drawRect(10,15,90,60)
@@ -37,7 +37,7 @@ class FillRect(QWidget):
         brush = QBrush(Qt.HorPattern)
         qp.setBrush(brush)
         qp.drawRect(130, 105, 90, 60)
-        qp.end()
+        qp.end()  # 必须要
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

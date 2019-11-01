@@ -35,12 +35,11 @@ class Toolbar(QMainWindow) :
         save = QAction(QIcon('./images/save.png'),"save",self)
         tb1.addAction(save)
 
-
-        tb2 = self.addToolBar("File1")
+        tb2 = self.addToolBar("File1")  # 添加了第二个工具栏
         new1 = QAction(QIcon('./images/new.png'),"新建",self)
         tb2.addAction(new1)
 
-        tb2.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
+        tb2.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)  # 设置即显示图标又显示文本，文本在图标下方；不设置的话默认是只显示图标
 
         tb1.actionTriggered.connect(self.toolbtnpressed)
 

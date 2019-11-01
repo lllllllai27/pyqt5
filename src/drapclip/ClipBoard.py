@@ -20,14 +20,14 @@ class ClipBoard(QDialog):
         imageCopyButton = QPushButton('复制图像')
         imagePasteButton = QPushButton('粘贴图像')
 
-        self.textLabel  = QLabel('默认文本')
+        self.textLabel = QLabel('默认文本')
         self.imageLabel=QLabel()
       #  self.imageLabel.setPixmap(QPixmap('./images/book1.png'))
 
         layout = QGridLayout()
         layout.addWidget(textCopyButton,0,0)
-        layout.addWidget(imageCopyButton,0,1)
-        layout.addWidget(htmlCopyButton,0,2)
+        layout.addWidget(htmlCopyButton,0,1)
+        layout.addWidget(imageCopyButton,0,2)
         layout.addWidget(textPasteButton,1,0)
         layout.addWidget(htmlPasteButton,1,1)
         layout.addWidget(imagePasteButton,1,2)
@@ -38,7 +38,6 @@ class ClipBoard(QDialog):
         self.setLayout(layout)
 
         textCopyButton.clicked.connect(self.copyText)
-
         textPasteButton.clicked.connect(self.pasteText)
         htmlCopyButton.clicked.connect(self.copyHtml)
         htmlPasteButton.clicked.connect(self.pasteHtml)
@@ -48,11 +47,11 @@ class ClipBoard(QDialog):
         self.setWindowTitle('剪贴板演示')
 
     def copyText(self):
-        clipboard = QApplication.clipboard()
-        clipboard.setText('hello world')
+        clipboard = QApplication.clipboard()   # 系统的剪切板对象
+        clipboard.setText('hello world')       # 剪切板对象设置文本，相当于复制了
     def pasteText(self):
         clipboard = QApplication.clipboard()
-        self.textLabel.setText(clipboard.text())
+        self.textLabel.setText(clipboard.text())   # 给文本标签设置文本，相当于粘贴了
 
     def copyImage(self):
         clipboard = QApplication.clipboard()
@@ -64,7 +63,7 @@ class ClipBoard(QDialog):
 
     def copyHtml(self):
         mimeData = QMimeData()
-        mimeData.setHtml('<b>Bold and <font color=red>Red</font></b>')
+        mimeData.setHtml('<b>Bold and <font color=red>Red</font></b>')   # 设置html格式文本
         clipboard = QApplication.clipboard()
         clipboard.setMimeData(mimeData)
 

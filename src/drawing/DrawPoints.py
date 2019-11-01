@@ -26,11 +26,13 @@ class DrawPoints(QWidget):
         size = self.size()
 
         for i in range(1000):
-            x = 100 * (-1 + 2.0 * i/1000) + size.width()/2.0
-            y = -50 * math.sin((x - size.width()/2.0) * math.pi/50) + size.height()/2.0
+            x = 100 * (-1 + 2.0 * i/1000) + size.width()/2.0   # size.width()/2.0是水平居中的效果
+            y = -50 * math.sin((x - size.width()/2.0) * math.pi/50) + size.height()/2.0  # size.height()/2.0是垂直居中的效果
             painter.drawPoint(x,y)
 
         painter.end()
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = DrawPoints()

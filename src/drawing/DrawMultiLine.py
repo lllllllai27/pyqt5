@@ -28,8 +28,8 @@ class DrawMultiLine(QWidget):
         painter.drawLine(20,40,250,40)
 
         pen.setStyle(Qt.DashLine)
-        painter.setPen(pen)
-        painter.drawLine(20, 80, 250, 80)
+        painter.setPen(pen)   # 每次都要调用一下
+        painter.drawLine(20, 80, 250, 80)   # 起点和重点坐标x1,y1  x2,y2
 
         pen.setStyle(Qt.DashDotDotLine)
         painter.setPen(pen)

@@ -30,6 +30,7 @@ class Menu(QMainWindow) :
         file.addAction(quit)
 
     def process(self,a):
+        print(a)
         print(self.sender().text())
 
 

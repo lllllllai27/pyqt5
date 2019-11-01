@@ -39,7 +39,7 @@ class DrawText(QWidget):
         painter.setPen(QColor(150,43,5))
         painter.setFont(QFont('SimSun',25))
 
-        painter.drawText(event.rect(),Qt.AlignCenter,self.text)
+        painter.drawText(event.rect(),Qt.AlignCenter,self.text)  # 改变窗口大小，会调用此方法，由于设置了此方法，字体会一直居中
         painter.end()
 
 if __name__ == '__main__':

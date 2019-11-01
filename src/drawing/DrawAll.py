@@ -28,11 +28,12 @@ class DrawAll(QWidget):
         qp.setPen(Qt.blue)
 
         # 绘制弧
-        rect = QRect(0,10,100,100)
-        # alen: 1个alen等于1/16度   45 * 16
-        qp.drawArc(rect,0, 50 * 16)
+        rect = QRect(0,10,100,100)   # 设置绘图区域
+        # alen: 1个alen等于1/16度   所以45°就等于45 * 16
+        qp.drawArc(rect,0, 50 * 16)   # 绘制50°的圆弧
         # 通过弧绘制圆
         qp.setPen(Qt.red)
+        # 参数说明：位置x1,y1,x2,y2，开始角度，结束角度
         qp.drawArc(120,10,100,100,0, 360 * 16)
 
         # 绘制带弦的弧
@@ -54,10 +55,10 @@ class DrawAll(QWidget):
         qp.drawPolygon(polygon)
 
         # 绘制图像
-        image = QImage('./images/book1.png')
+        image = QImage('./images/1.jpg')
         rect = QRect(10, 400, image.width()/3, image.height()/3)
         #image.save('./images/book1.png')
-        qp.drawImage(rect,image)
+        qp.drawImage(rect, image)
 
         qp.end()
 
